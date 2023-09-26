@@ -1,15 +1,10 @@
 using System.Collections.Generic;
+using Godot;
 using InputProvider;
 
 public partial class TestInputProvider : ChainInputProvider<TestInputState>
 {
-
-    private readonly List<IInputHandler<TestInputState>> inputHandlers = new();
-
-    public TestInputProvider()
-    {
-        inputHandlers.Add(new TestInputHandler());
-    }
+    [Export] private Godot.Collections.Array<TestInputHandler> inputHandlers;
 
     protected override TestInputState CreateNewState()
     {
