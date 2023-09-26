@@ -4,7 +4,7 @@ namespace InputProvider
 {
 
     /// <summary>
-    /// An input provider which follows the chain of command pattern to get the input state.
+    /// An input provider which follows the chain of responsability pattern to get the input state.
     /// </summary>
     /// <typeparam name="T">The type of the input state.</typeparam>
     public abstract partial class ChainInputProvider<T> : NodeInputProvider<T> where T : IInputState
@@ -12,7 +12,7 @@ namespace InputProvider
         private readonly T state;
 
         /// <summary>
-        /// Creates a new chain of command input provider.
+        /// Creates a new chain of responsability input provider.
         /// </summary>
         public ChainInputProvider()
         {
