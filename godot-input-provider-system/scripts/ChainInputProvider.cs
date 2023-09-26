@@ -7,7 +7,7 @@ namespace InputProvider
     /// An input provider which follows the chain of command pattern to get the input state.
     /// </summary>
     /// <typeparam name="T">The type of the input state.</typeparam>
-    public abstract partial class ChainInputProvider<T> : InputProvider<T> where T : IInputState
+    public abstract partial class ChainInputProvider<T> : NodeInputProvider<T> where T : IInputState
     {
         private readonly T state;
 
