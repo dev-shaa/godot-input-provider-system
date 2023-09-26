@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using InputProvider;
 
 public partial class TestInputProvider : ChainInputProvider<TestInputState>
 {

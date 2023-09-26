@@ -1,6 +1,12 @@
 using Godot;
 
-public abstract partial class InputProvider<T> : Node, IInputProvider<T> where T : IInputState
+namespace InputProvider
 {
-    public abstract T GetState();
+
+
+    public abstract partial class InputProvider<T> : Node, IInputProvider<T> where T : IInputState
+    {
+        public abstract T GetState();
+    }
+
 }

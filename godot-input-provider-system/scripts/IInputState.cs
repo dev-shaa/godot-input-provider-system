@@ -1,7 +1,13 @@
-public interface IInputState
+namespace InputProvider
 {
-	/// <summary>
-	/// Resets the input state.
-	/// </summary>
-	void Reset();
+
+
+	public interface IInputState
+	{
+		/// <summary>
+		/// Resets the input state.
+		/// </summary>
+		void Reset();
+	}
+
 }

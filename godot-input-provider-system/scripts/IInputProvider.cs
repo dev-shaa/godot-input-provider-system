@@ -1,8 +1,13 @@
-public interface IInputProvider<T> where T : IInputState
+namespace InputProvider
 {
-	/// <summary>
-	/// Returns the updated input state.
-	/// </summary>
-	/// <returns>The input state.</returns>
-	T GetState();
+
+	public interface IInputProvider<T> where T : IInputState
+	{
+		/// <summary>
+		/// Returns the updated input state.
+		/// </summary>
+		/// <returns>The input state.</returns>
+		T GetState();
+	}
+
 }
