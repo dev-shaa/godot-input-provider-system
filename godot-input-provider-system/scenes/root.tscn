@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://vxjm8wbgc45f"]
+[gd_scene load_steps=5 format=3 uid="uid://vxjm8wbgc45f"]
 
-[node name="root" type="Node3D"]
+[ext_resource type="Script" path="res://scripts/test/Tester.cs" id="1_8t0i7"]
+[ext_resource type="Script" path="res://scripts/test/TestInputProvider.cs" id="1_ipqlg"]
+[ext_resource type="Script" path="res://scripts/test/handlers/PlayerInputHandler.cs" id="3_80nw4"]
+[ext_resource type="Script" path="res://scripts/test/handlers/ZoneInputHandler.cs" id="4_h3a2a"]
+
+[node name="root" type="Node3D" node_paths=PackedStringArray("inputProvider")]
+script = ExtResource("1_8t0i7")
+inputProvider = NodePath("input_provider")
+
+[node name="input_provider" type="Node3D" parent="." node_paths=PackedStringArray("inputHandlers")]
+script = ExtResource("1_ipqlg")
+inputHandlers = [NodePath("player_input_handler"), NodePath("zone_input_handler")]
+
+[node name="player_input_handler" type="Node3D" parent="input_provider"]
+script = ExtResource("3_80nw4")
+
+[node name="zone_input_handler" type="Node3D" parent="input_provider"]
+script = ExtResource("4_h3a2a")
